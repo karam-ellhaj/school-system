@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add students</title>
+    <link rel="stylesheet" href="../static/add-student.css">
+</head>
+<body>
+    <a href="/">عودة الى الصفحة الرئيسية</a>
+
+
+    <h1>اضافة طالب جديد</h1>
+
+    <main>
+        <form action="/add-student" method="post">
+
+            <!-- <label for="name">الاسم</label> -->
+            <input type="text" name="name" placeholder="الاسم" required>
+
+            <label for="date">تاريخ التسجيل</label>
+            <input type="date" name="date" placeholder="تاريخ التسجيل" required>
+    
+            <!-- <label for="paid">المبلغ المدفوع</label> -->
+            <input type="number" name="paid" placeholder="المبلغ المدفوع" required>
+            <!-- <label for="total">المبلغ الكلي</label> -->
+            <input type="number" name="total" placeholder="المبلغ الكلي" required>
+            <label for="grade">الصف </label>
+
+            <select name="grade" id="grade" required>
+                <option value="1">اولى اساس</option>
+                <option value="2">تانية اساس</option>
+                <option value="3">تالتة اساس</option>
+                <option value="4">رابعة اساس</option>
+                <option value="5">خامسة اساس</option>
+                <option value="6">سادسة اساس</option>
+                <option value="7">اولى متوسط</option>
+                <option value="8">تانية متوسط</option>
+                <option value="9">تالتة متوسط</option>
+                <option value="10">اولى ثانوي</option>
+                <option value="10">تانية ثانوي</option>
+                <option value="10">تالتة ثانوي</option>
+            </select>
+            <input type="submit" name="" id="" value="اضافة">
+        </form>
+    </main>
+</body>
+</html>

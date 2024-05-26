@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/students.css">
+    <title>Students</title>
+</head>
+<body>
+    <a href="/">عودة الى الصفحة الرئيسية</a>
+
+    <form action="/students">
+        <label for="name">بحث باسم الطالب </label>
+        <input type="text" name="name" placeholder="بحث بالاسم">
+        <label for="grade">بحث بالصف</label>
+        <select name="grade" id="grade">
+            <option value="">كل الفصول</option>
+            <option value="1">اولى اساس</option>
+            <option value="2">تانية اساس</option>
+            <option value="3">تالتة اساس</option>
+            <option value="4">رابعة اساس</option>
+            <option value="5">خامسة اساس</option>
+            <option value="6">سادسة اساس</option>
+            <option value="7">اولى متوسط</option>
+            <option value="8">تانية متوسط</option>
+            <option value="9">تالتة متوسط</option>
+            <option value="10">اولى ثانوي</option>
+            <option value="11">تانية ثانوي</option>
+            <option value="12">تالتة ثانوي</option>
+        </select>
+        <input type="submit" name="submit" id="submit" value="بحث" >
+    </form>
+    <main>
+        
+    <div class="table">
+        <div class="head">
+            <div class="name">اسم الطالب</div>
+            <div class="date">تاريخ التسجيل</div>
+            <div class="grade">الصف</div>
+            <div class="paid">المبلغ المدفوع</div>
+            <div class="total">المبلغ الكلي</div>
+            <div class="rest">المتبقي</div>
+        </div>
+
+        {%for student in students%}
+        <div class="student">
+            <a href="/edit-student?id={{student.id}}">
+                <div class="name">{{student.name}}</div>
+            </a>
+            <div class="date">{{student.date_of_enroll}}</div>
+            <div class="grade">{{grades[student.grade]}}</div>
+            <div class="paid">{{student.paid}}</div>
+            <div class="total">{{student.total}}</div>
+            <div class="rest"> {{student.total - student.paid}}</div>
+
+        </div>
+        <a href="/delete/{{student.id}}"> حذف سجل الطالب {{student.name}}</a>
+        {%endfor%}
+    </div>
+    </main>
+</body>
+</html>
